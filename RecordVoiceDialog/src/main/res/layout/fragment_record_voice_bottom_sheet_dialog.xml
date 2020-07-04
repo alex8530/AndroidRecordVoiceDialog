@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.recordvoicedialog.RecordVoiceBottomSheetFragmentDialog">
+
+
+    <Chronometer
+        android:layout_marginTop="30dp"
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/recordContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/recordLottieAnimationView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/record_pink" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_longer_than_one_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="must be longer than 1 sec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordContainer" />
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_send"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="send"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/recordContainer" />-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/sendLottieAnimationView"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordContainer"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/submit" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordContainer"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:scaleType="centerInside"
+        android:id="@+id/cancelLottieAnimationView"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+
+        app:lottie_rawRes="@raw/cancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

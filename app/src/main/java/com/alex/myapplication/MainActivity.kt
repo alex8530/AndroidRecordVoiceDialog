@@ -1,10 +1,10 @@
-package com.example.myapplication
+package com.alex.myapplication
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.recordvoicedialog.OnRecordListener
-import com.example.recordvoicedialog.RecordVoiceBottomSheetFragmentDialog
+import com.alex.recordvoicedialog.OnRecordListener
+import com.alex.recordvoicedialog.RecordVoiceBottomSheetFragmentDialog
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity()  {

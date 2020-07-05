@@ -1,4 +1,4 @@
-package com.example.recordvoicedialog
+package com.alex.recordvoicedialog
 
 interface OnRecordListener {
     fun onStartRecording()

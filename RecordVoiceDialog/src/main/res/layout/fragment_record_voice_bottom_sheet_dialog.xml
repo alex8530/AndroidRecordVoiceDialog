@@ -5,10 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#000"
+    android:id="@+id/root_constraintLayout"
     tools:context="com.alex.recordvoicedialog.RecordVoiceBottomSheetFragmentDialog">
 
-
     <Chronometer
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#fff"
         android:layout_marginTop="30dp"
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
@@ -39,6 +43,8 @@
 
 
     <TextView
+
+        android:textColor="#fff"
         android:id="@+id/tv_longer_than_one_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,14 +52,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recordContainer" />
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_send"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="send"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/recordContainer" />-->
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/sendLottieAnimationView"
@@ -75,7 +73,6 @@
         android:id="@+id/cancelLottieAnimationView"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-
         app:lottie_rawRes="@raw/cancel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

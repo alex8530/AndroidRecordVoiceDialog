@@ -99,6 +99,11 @@ class RecordVoiceBottomSheetFragmentDialog :
     private fun isLessThanOneSecond(time: Long): Boolean {
         return time <= 1000
     }
+
+    private fun setTextViewLongerThanOneMinText(text:String){
+        tv_longer_than_one_min.text=text
+    }
+
 }
 
 

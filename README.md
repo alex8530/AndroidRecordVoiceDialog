@@ -1,6 +1,8 @@
 # AndroidRecordVoiceDialog
 
 
+![Image Result](https://im2.ezgif.com/tmp/ezgif-2-7103a21fa804.gif)
+
 ## Getting started
 * In ``` build.gradle ``` (  Project Level  )
 

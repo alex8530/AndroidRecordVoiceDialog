@@ -2,8 +2,19 @@
 
 
 ## Getting started
+* In ``` build.gradle ``` (  Project Level  )
+Add maven of jitback
 
-Add library as dependency to your `build.gradle`.
+ ```
+allprojects { 
+     repositories { 
+        maven { url 'https://jitpack.io' }
+      }
+ }   
+```
+* In ``` build.gradle ``` (  app Level  )
+
+Add library as dependency 
 ```
  implementation 'com.github.alex8530:AndroidRecordVoiceDialog:Tag'
 ```

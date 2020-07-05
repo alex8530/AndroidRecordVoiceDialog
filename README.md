@@ -19,7 +19,7 @@ allprojects {
 
 Add library as dependency 
 ```
- implementation 'com.github.alex8530:AndroidRecordVoiceDialog:Tag'
+ implementation 'com.github.alex8530:AndroidRecordVoiceDialog:1.0.3'
 ```
 and be sure you have material
 ```

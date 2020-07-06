@@ -34,7 +34,7 @@ and be sure you have material
    ```java
    
   val dailog = RecordVoiceBottomSheetFragmentDialog()
-  r.show(supportFragmentManager, "tag!")
+  dailog.show(supportFragmentManager, "tag!")
    
    ```
    

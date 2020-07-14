@@ -48,7 +48,7 @@
         android:id="@+id/tv_longer_than_one_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="must be longer than 1 sec"
+        android:text="@string/must_be_longer_than_1_sec"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recordContainer" />

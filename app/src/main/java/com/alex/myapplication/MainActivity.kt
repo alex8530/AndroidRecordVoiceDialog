@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity()  {
         setContentView(R.layout.activity_main)
         btn_showDailog.setOnClickListener {
             val r = RecordVoiceBottomSheetFragmentDialog()
+            r.isCancelable=false
             r.show(supportFragmentManager, "tag!")
             r.recordListener= (object :OnRecordListener{
                 override fun onCancel() {

@@ -22,7 +22,7 @@ class RecordVoiceBottomSheetFragmentDialog :
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        isCancelable = true
+
 
         return inflater.inflate(
             R.layout.fragment_record_voice_bottom_sheet_dialog,

@@ -34,10 +34,13 @@ class MainActivity : AppCompatActivity()  {
                     Log.d(TAG, "onSend")
                 }
 
+                override fun dismissDialog() {
+                    Log.d(TAG, "dismissDialog")
+                }
+
                 override fun onStartRecording() {
                     Log.d(TAG, "onStartRecording")
                 }
-
             })
         }
 

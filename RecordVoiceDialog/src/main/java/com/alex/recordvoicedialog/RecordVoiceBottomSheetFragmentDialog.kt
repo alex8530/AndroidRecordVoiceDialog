@@ -89,6 +89,11 @@ class RecordVoiceBottomSheetFragmentDialog :
 //            }
             dismiss()
         }
+
+        img_dismiss.setOnClickListener {
+            if (recordListener != null) recordListener!!.dismissDialog()
+            dismiss()
+        }
         cancelLottieAnimationView.setOnClickListener {
             if (recordListener != null) recordListener!!.onCancel()
             dismiss()

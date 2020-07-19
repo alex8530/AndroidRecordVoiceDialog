@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,25 +9,33 @@
     android:id="@+id/root_constraintLayout"
     tools:context="com.alex.recordvoicedialog.RecordVoiceBottomSheetFragmentDialog">
 
+
+
+    <ImageView
+        android:id="@+id/img_dismiss"
+        android:padding="15dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_baseline_cancel_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <Chronometer
         android:textStyle="bold"
         android:textSize="16sp"
         android:textColor="#fff"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00:00"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"  />
 
     <FrameLayout
         android:id="@+id/recordContainer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_time"
-
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -49,30 +57,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/must_be_longer_than_1_sec"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recordContainer" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/recordContainer"  />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/sendLottieAnimationView"
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recordContainer"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/recordContainer"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/submit" />
 
     <com.airbnb.lottie.LottieAnimationView
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recordContainer"
+        android:layout_below="@+id/recordContainer"
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:scaleType="centerInside"
         android:id="@+id/cancelLottieAnimationView"
+        android:layout_alignParentEnd="true"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/cancel" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

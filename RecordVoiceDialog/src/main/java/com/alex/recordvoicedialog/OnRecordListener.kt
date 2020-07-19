@@ -6,4 +6,5 @@ interface OnRecordListener {
     fun onFinish(recordTime: Long)
     fun onLessThanSecond()
     fun onSend(recordTime: Long)
+    fun dismissDialog()
 }

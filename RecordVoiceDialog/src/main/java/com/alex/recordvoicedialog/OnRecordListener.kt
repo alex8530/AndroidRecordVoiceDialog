@@ -5,5 +5,5 @@ interface OnRecordListener {
     fun onCancel()
     fun onFinish(recordTime: Long)
     fun onLessThanSecond()
-    fun onSend()
+    fun onSend(recordTime: Long)
 }

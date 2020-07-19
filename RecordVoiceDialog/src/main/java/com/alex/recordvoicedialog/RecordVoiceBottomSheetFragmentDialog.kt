@@ -16,6 +16,7 @@ class RecordVoiceBottomSheetFragmentDialog :
     BottomSheetDialogFragment() {
     private val TAG = "RecordVoiceBottomSheet"
     var startTime: Long = 0
+    var   elapsedTime: Long = 0
     var recordListener: OnRecordListener? = null
 
     override fun onCreateView(
@@ -44,7 +45,6 @@ class RecordVoiceBottomSheetFragmentDialog :
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
                 when (event?.action) {
                     MotionEvent.ACTION_DOWN -> {
-                        Log.d(TAG, "ACTION_DOWN")
                         if (recordListener != null) recordListener!!.onStartRecording()
                         tv_time.base = SystemClock.elapsedRealtime()
                         tv_time.start()
@@ -57,17 +57,17 @@ class RecordVoiceBottomSheetFragmentDialog :
                     }
                     MotionEvent.ACTION_UP -> {
                         Log.d(TAG, "ACTION_up")
-                        val time = System.currentTimeMillis() - startTime
+                        elapsedTime = System.currentTimeMillis() - startTime
                         tv_time.stop()
                         recordLottieAnimationView.pauseAnimation()
 
-                        if (isLessThanOneSecond(time)) {
+                        if (isLessThanOneSecond(elapsedTime)) {
                             if (recordListener != null) recordListener!!.onLessThanSecond()
                             cancelLottieAnimationView.visibility = View.VISIBLE
                             tv_longer_than_one_min.visibility = View.VISIBLE
 
                         } else {
-                            if (recordListener != null) recordListener!!.onFinish(time)
+                            if (recordListener != null) recordListener!!.onFinish(elapsedTime)
                             cancelLottieAnimationView.visibility = View.VISIBLE
                             sendLottieAnimationView.visibility = View.VISIBLE
                         }
@@ -79,7 +79,7 @@ class RecordVoiceBottomSheetFragmentDialog :
         })
 
         sendLottieAnimationView.setOnClickListener {
-            if (recordListener != null) recordListener!!.onSend()
+            if (recordListener != null) recordListener!!.onSend(elapsedTime)
 //            sendLottieAnimationView.playAnimation()
 //            sendLottieAnimationView.addAnimatorUpdateListener {
 //               Log.d(TAG, it.animatedValue.toString()  )
@@ -88,7 +88,6 @@ class RecordVoiceBottomSheetFragmentDialog :
 //                }
 //            }
             dismiss()
-
         }
         cancelLottieAnimationView.setOnClickListener {
             if (recordListener != null) recordListener!!.onCancel()

@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity()  {
                     Log.d(TAG, "onLessThanSecond")
                 }
 
-                override fun onSend() {
+                override fun onSend(elapsedTime:Long) {
                     Log.d(TAG, "onSend")
                 }
 

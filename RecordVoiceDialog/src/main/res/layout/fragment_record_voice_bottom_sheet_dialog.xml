@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#000"
-    android:id="@+id/root_constraintLayout"
     tools:context="com.alex.recordvoicedialog.RecordVoiceBottomSheetFragmentDialog">
-
 
 
     <ImageView
         android:id="@+id/img_dismiss"
-        android:padding="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_baseline_cancel_24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:padding="15dp"
+        android:src="@drawable/ic_baseline_cancel_24" />
 
     <Chronometer
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:textColor="#fff"
-        android:layout_marginTop="40dp"
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:00"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"  />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="00:00"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <FrameLayout
         android:id="@+id/recordContainer"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tv_time"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_time"
+        android:layout_centerHorizontal="true">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/recordLottieAnimationView"
@@ -52,34 +50,38 @@
 
     <TextView
 
-        android:textColor="#fff"
         android:id="@+id/tv_longer_than_one_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/must_be_longer_than_1_sec"
+        android:layout_below="@+id/recordContainer"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/recordContainer"  />
+        android:text="@string/must_be_longer_than_1_sec"
+        android:textColor="#fff" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/sendLottieAnimationView"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:scaleType="centerCrop"
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/sendImageView"
+        android:layout_width="50dp"
+        android:src="@drawable/ic_check"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_longer_than_one_min"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/recordContainer"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/submit" />
+        android:scaleType="centerInside"  />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_below="@+id/recordContainer"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:scaleType="centerInside"
-        android:id="@+id/cancelLottieAnimationView"
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/cancelImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_longer_than_one_min"
         android:layout_alignParentEnd="true"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/cancel" />
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_remove" />
 
 </RelativeLayout>

@@ -23,9 +23,7 @@ class MainActivity : AppCompatActivity()  {
 
                 override fun onFinish(recordTime: Long) {
                     Log.d(TAG, "onFinish : " + recordTime)
-
                 }
-
                 override fun onLessThanSecond() {
                     Log.d(TAG, "onLessThanSecond")
                 }
@@ -45,7 +43,5 @@ class MainActivity : AppCompatActivity()  {
         }
 
     }
-
-
 }
 

@@ -1,5 +1,6 @@
 package com.alex.recordvoicedialog
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
@@ -33,8 +34,8 @@ class RecordVoiceBottomSheetFragmentDialog :
     }
 
     private fun resetViews() {
-        cancelLottieAnimationView.visibility = View.INVISIBLE
-        sendLottieAnimationView.visibility = View.INVISIBLE
+        cancelImageView.visibility = View.INVISIBLE
+        sendImageView.visibility = View.INVISIBLE
         tv_longer_than_one_min.visibility = View.INVISIBLE
     }
 
@@ -63,13 +64,13 @@ class RecordVoiceBottomSheetFragmentDialog :
 
                         if (isLessThanOneSecond(elapsedTime)) {
                             if (recordListener != null) recordListener!!.onLessThanSecond()
-                            cancelLottieAnimationView.visibility = View.VISIBLE
+                            cancelImageView.visibility = View.VISIBLE
                             tv_longer_than_one_min.visibility = View.VISIBLE
 
                         } else {
                             if (recordListener != null) recordListener!!.onFinish(elapsedTime)
-                            cancelLottieAnimationView.visibility = View.VISIBLE
-                            sendLottieAnimationView.visibility = View.VISIBLE
+                            cancelImageView.visibility = View.VISIBLE
+                            sendImageView.visibility = View.VISIBLE
                         }
                     }
                 }
@@ -78,26 +79,22 @@ class RecordVoiceBottomSheetFragmentDialog :
             }
         })
 
-        sendLottieAnimationView.setOnClickListener {
+        sendImageView.setOnClickListener {
             if (recordListener != null) recordListener!!.onSend(elapsedTime)
-//            sendLottieAnimationView.playAnimation()
-//            sendLottieAnimationView.addAnimatorUpdateListener {
-//               Log.d(TAG, it.animatedValue.toString()  )
-//                if (it.animatedValue as Float >=  .99){
-//                    dismiss()
-//                }
-//            }
             dismiss()
         }
+
 
         img_dismiss.setOnClickListener {
             if (recordListener != null) recordListener!!.dismissDialog()
             dismiss()
         }
-        cancelLottieAnimationView.setOnClickListener {
+        cancelImageView.setOnClickListener {
             if (recordListener != null) recordListener!!.onCancel()
             dismiss()
         }
+
+
     }
 
     private fun isLessThanOneSecond(time: Long): Boolean {
